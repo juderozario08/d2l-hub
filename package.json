@@ -6,6 +6,7 @@
   "author": "D2L Hub",
   "type": "module",
   "main": "electron/main.mjs",
+  "desktopName": "d2l-hub.desktop",
   "scripts": {
     "dev": "concurrently -n api,web -c magenta,cyan \"npm:dev:api\" \"npm:dev:web\"",
     "dev:preview": "concurrently -n api,web -c magenta,cyan \"npm:dev:api:preview\" \"npm:dev:web\"",
@@ -23,6 +24,7 @@
     "dist:win:dir": "npm run build && electron-builder --win --dir -c.electronDist=node_modules/electron/dist",
     "dist:mac": "npm run build && electron-builder --mac",
     "dist:linux": "npm run build && electron-builder --linux",
+    "install:app": "node scripts/install-app.mjs",
     "test": "vitest run",
     "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.server.json --noEmit"
   },
